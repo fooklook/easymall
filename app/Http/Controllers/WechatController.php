@@ -10,6 +10,6 @@ class WechatController extends Controller
 {
     //微信入口
     public function index(Application $wechat){
-        dd($wechat);
+        $wechat->server->serve()->send();
     }
 }
