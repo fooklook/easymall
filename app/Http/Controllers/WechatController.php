@@ -14,6 +14,7 @@ class WechatController extends Controller
         //Log::info(json_encode($request));
         $server = $wechat->server;
         $server->setMessageHandler(function($message){
+            Log::info(json_encode($message));
             return '欢迎使用fooklook回复助手，功能等待完善中。';
         });
         $server->serve()->send();
