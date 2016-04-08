@@ -15,9 +15,41 @@ class WechatController extends Controller
         $server = $wechat->server;
         $server->setMessageHandler(function($message){
             Log::info($message->ToUserName);
-            Log::info($message['ToUserName']);
             return '欢迎使用fooklook回复助手，功能等待完善中。';
         });
         $server->serve()->send();
+    }
+
+    //自定义菜单
+    public function menu(Application $wechat){
+        $menu = $wechat->menu;
+        $buttons = [
+            [
+                "type" => "click",
+                "name" => "今日歌曲",
+                "key"  => "V1001_TODAY_MUSIC"
+            ],
+            [
+                "name"       => "菜单",
+                "sub_button" => [
+                    [
+                        "type" => "view",
+                        "name" => "搜索",
+                        "url"  => "http://www.soso.com/"
+                    ],
+                    [
+                        "type" => "view",
+                        "name" => "视频",
+                        "url"  => "http://v.qq.com/"
+                    ],
+                    [
+                        "type" => "click",
+                        "name" => "赞一下我们",
+                        "key" => "V1001_GOOD"
+                    ],
+                ],
+            ],
+        ];
+        $menu->add($buttons);
     }
 }
