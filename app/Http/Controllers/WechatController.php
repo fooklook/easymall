@@ -48,8 +48,22 @@ class WechatController extends Controller
                         "key" => "V1001_GOOD"
                     ],
                 ],
-            ],
+            ]
         ];
-        $menu->add($buttons);
+        $matchRule = [
+            "group_id"             => "2",
+            "sex"                  => "1",
+            "country"              => "中国",
+            "province"             => "广东",
+            "city"                 => "广州",
+            "client_platform_type" => "2"
+        ];
+        $menu->add($buttons,$matchRule);
+    }
+
+    //微信分享
+    public function share(Application $wechat){
+        $jssdk = $wechat->js;
+        return view('share', array('js'=>$jssdk));
     }
 }
