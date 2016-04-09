@@ -60,7 +60,7 @@
 
         }
     });
-
+    wx.ready(function(){});
     //分享给好友
     wx.onMenuShareAppMessage({
         title: shareTitle,
