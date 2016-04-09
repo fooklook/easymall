@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
-    <title>Î¢ĞÅ·ÖÏí</title>
+    <title>å¾®ä¿¡åˆ†äº«æµ‹è¯•</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -44,65 +44,59 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
     wx.config(<?php echo $jssdk->config(array('onMenuShareQQ', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareWeibo', 'onMenuShareQZone'), true, true) ?>);
+    var shareTitle = 'å¾®ä¿¡åˆ†äº«æµ‹è¯•';
+    var descContent = 'å¾®ä¿¡åˆ†äº«å†…å®¹æµ‹è¯•';
     var imgUrl = "http://7xo7bi.com1.z0.glb.clouddn.com/note-easybuild.jpg";
     var lineLink = window.location.href;
-    var descContent = '·ÖÏí²âÊÔ';
-    var shareTitle = '·ÖÏí±êÌâ';
-    wx.read(function(){
-        //·ÖÏí¸øÅóÓÑ
-        wx.onMenuShareTimeline({
-            title: shareTitle, // ·ÖÏí±êÌâ
-            link: lineLink, // ·ÖÏíÁ´½Ó
-            imgUrl: imgUrl, // ·ÖÏíÍ¼±ê
-            success: function () {
-                // ÓÃ»§È·ÈÏ·ÖÏíºóÖ´ĞĞµÄ»Øµ÷º¯Êı
-            },
-            cancel: function () {
-                // ÓÃ»§È¡Ïû·ÖÏíºóÖ´ĞĞµÄ»Øµ÷º¯Êı
-            }
-        });
+    //åˆ†äº«åˆ°æœ‹å‹åœˆ
+    wx.onMenuShareTimeline({
+        title: shareTitle,
+        link: lineLink,
+        imgUrl: imgUrl,
+        success: function () {
 
-        //·ÖÏíµ½ÅóÓÑÈ¦
-        wx.onMenuShareAppMessage({
-            title: shareTitle, // ·ÖÏí±êÌâ
-            desc: descContent, // ·ÖÏíÃèÊö
-            link: lineLink, // ·ÖÏíÁ´½Ó
-            imgUrl: imgUrl, // ·ÖÏíÍ¼±ê
-            type: '', // ·ÖÏíÀàĞÍ,music¡¢video»òlink£¬²»ÌîÄ¬ÈÏÎªlink
-            dataUrl: '', // Èç¹ûtypeÊÇmusic»òvideo£¬ÔòÒªÌá¹©Êı¾İÁ´½Ó£¬Ä¬ÈÏÎª¿Õ
-            success: function () {
-                // ÓÃ»§È·ÈÏ·ÖÏíºóÖ´ĞĞµÄ»Øµ÷º¯Êı
-            },
-            cancel: function () {
-                // ÓÃ»§È¡Ïû·ÖÏíºóÖ´ĞĞµÄ»Øµ÷º¯Êı
-            }
-        });
-        //·ÖÏíµ½QQ
-        wx.onMenuShareQQ({
-            title: shareTitle, // ·ÖÏí±êÌâ
-            desc: descContent, // ·ÖÏíÃèÊö
-            link: lineLink, // ·ÖÏíÁ´½Ó
-            imgUrl: imgUrl, // ·ÖÏíÍ¼±ê
-            success: function () {
-                // ÓÃ»§È·ÈÏ·ÖÏíºóÖ´ĞĞµÄ»Øµ÷º¯Êı
-            },
-            cancel: function () {
-                // ÓÃ»§È¡Ïû·ÖÏíºóÖ´ĞĞµÄ»Øµ÷º¯Êı
-            }
-        });
-        //·ÖÏíµ½QQ¿Õ¼ä
-        wx.onMenuShareQZone({
-            title: shareTitle, // ·ÖÏí±êÌâ
-            desc: descContent, // ·ÖÏíÃèÊö
-            link: lineLink, // ·ÖÏíÁ´½Ó
-            imgUrl: imgUrl, // ·ÖÏíÍ¼±ê
-            success: function () {
-                // ÓÃ»§È·ÈÏ·ÖÏíºóÖ´ĞĞµÄ»Øµ÷º¯Êı
-            },
-            cancel: function () {
-                // ÓÃ»§È¡Ïû·ÖÏíºóÖ´ĞĞµÄ»Øµ÷º¯Êı
-            }
-        });
+        },
+        cancel: function () {
+
+        }
+    });
+
+    //åˆ†äº«ç»™å¥½å‹
+    wx.onMenuShareAppMessage({
+        title: shareTitle,
+        desc: descContent,
+        link: lineLink,
+        imgUrl: imgUrl,
+        type: '', // åˆ†äº«ç±»å‹,musicã€videoæˆ–linkï¼Œä¸å¡«é»˜è®¤ä¸ºlink
+        dataUrl: '', // å¦‚æœtypeæ˜¯musicæˆ–videoï¼Œåˆ™è¦æä¾›æ•°æ®é“¾æ¥ï¼Œé»˜è®¤ä¸ºç©º
+        success: function () {
+
+        },
+        cancel: function () {
+
+        }
+    });
+    //åˆ†äº«åˆ°QQ
+    wx.onMenuShareQQ({
+        title: shareTitle,
+        desc: descContent,
+        link: lineLink,
+        imgUrl: imgUrl,
+        success: function () {
+        },
+        cancel: function () {
+        }
+    });
+    //åˆ†äº«åˆ°qqç©ºé—´
+    wx.onMenuShareQZone({
+        title: shareTitle,
+        desc: descContent,
+        link: lineLink,
+        imgUrl: imgUrl,
+        success: function () {
+        },
+        cancel: function () {
+        }
     });
 </script>
 </body>
