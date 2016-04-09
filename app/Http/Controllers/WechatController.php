@@ -64,6 +64,6 @@ class WechatController extends Controller
     //微信分享
     public function share(Application $wechat){
         $jssdk = $wechat->js;
-        return view('share', array('js'=>$jssdk));
+        return view('share', array('jssdk'=>$jssdk));
     }
 }
