@@ -43,11 +43,26 @@
 </div>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
-    wx.config(<?php echo $jssdk->config(array('onMenuShareQQ', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareWeibo', 'onMenuShareQZone'), true, true) ?>);
+    wx.config(<?php echo $jssdk->config(array('onMenuShareQQ', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQZone'), true, true) ?>);
     var shareTitle = '微信分享测试';
     var descContent = '微信分享内容测试';
     var imgUrl = "http://7xo7bi.com1.z0.glb.clouddn.com/note-easybuild.jpg";
     var lineLink = window.location.href;
+
+    wx.ready(function(){});
+
+    wx.checkJsApi({
+        jsApiList: [
+            'getLocation',
+            'onMenuShareQQ',
+            'onMenuShareQZone',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage'
+        ],
+        success: function (res) {
+            alert(JSON.stringify(res));
+        }
+    });
     //分享到朋友圈
     wx.onMenuShareTimeline({
         title: shareTitle,
@@ -60,7 +75,7 @@
 
         }
     });
-    wx.ready(function(){});
+
     //分享给好友
     wx.onMenuShareAppMessage({
         title: shareTitle,
