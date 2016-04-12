@@ -159,6 +159,9 @@ return [
         /*  wechat  */
         Overtrue\LaravelWechat\ServiceProvider::class,
 
+        /*  weibo login   */
+        SocialiteProviders\Manager\ServiceProvider::class,
+
 
     ],
 
@@ -208,6 +211,9 @@ return [
         
         /*  wechat  */
         'Wechat' => Overtrue\LaravelWechat\Facade::class,
+
+        /*  weibo login  */
+        'Weibo' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
