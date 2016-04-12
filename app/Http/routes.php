@@ -32,3 +32,4 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::any('wechat', 'WechatController@index');
 Route::get('menu', 'WechatController@menu');
+Route::get('share', 'WechatController@share');
