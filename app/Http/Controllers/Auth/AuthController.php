@@ -71,6 +71,7 @@ class AuthController extends Controller
     }
 
     public function weibo() {
+        
         return \Socialite::with('weibo')->redirect();
         // return \Socialite::with('weibo')->scopes(array('email'))->redirect();
     }

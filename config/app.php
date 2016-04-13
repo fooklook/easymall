@@ -213,7 +213,7 @@ return [
         'Wechat' => Overtrue\LaravelWechat\Facade::class,
 
         /*  weibo login  */
-        'Weibo' => Laravel\Socialite\Facades\Socialite::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
