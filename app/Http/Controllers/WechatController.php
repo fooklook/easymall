@@ -66,4 +66,17 @@ class WechatController extends Controller
         $jssdk = $wechat->js;
         return view('share', array('jssdk'=>$jssdk));
     }
+
+    //发起微信授权登陆
+    public function start(Application $wechat){
+        $oauth = $wechat->oauth;
+        return $oauth->redirect();
+    }
+
+    //微信授权登陆回调地址
+    public function callback(Application $wechat){
+        $oauth = $wechat->oauth;
+        $user = $oauth->user();
+        dd($user->toArray());
+    }
 }
