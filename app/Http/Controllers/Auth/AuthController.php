@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Support\Facades\Request;
 
 class AuthController extends Controller
 {
@@ -72,13 +73,13 @@ class AuthController extends Controller
 
     public function weibo(Request $request,$service) {
 
-        return Socialite::driver($service)->redirect();
+        return \Socialite::driver($service)->redirect();
         // return \Socialite::with('weibo')->scopes(array('email'))->redirect();
     }
 
 
     public function callback(Request $request,$service) {
-        $user = Socialite::driver($service)->user();
+        $user = \Socialite::driver($service)->user();
         dd($user);
     }
 }
