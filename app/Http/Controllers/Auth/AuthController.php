@@ -71,15 +71,15 @@ class AuthController extends Controller
         ]);
     }
 
-    public function weibo(Request $request,$service) {
+    public function weibo(Request $request) {
 
-        return \Socialite::driver($service)->redirect();
+        return \Socialite::driver('weibo')->redirect();
         // return \Socialite::with('weibo')->scopes(array('email'))->redirect();
     }
 
 
-    public function callback(Request $request,$service) {
-        $user = \Socialite::driver($service)->user();
+    public function callback(Request $request) {
+        $user = \Socialite::driver('weibo')->user();
         dd($user);
     }
 }
