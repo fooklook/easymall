@@ -70,8 +70,7 @@ class WechatController extends Controller
     //发起微信授权登陆
     public function start(Application $wechat){
         $oauth = $wechat->oauth;
-
-        dd($oauth->redirect());
+        return $oauth->redirect();
     }
 
     //微信授权登陆回调地址
